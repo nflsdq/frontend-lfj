@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -54,6 +54,7 @@ const RegisterForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onBlur",
@@ -63,6 +64,11 @@ const RegisterForm = () => {
   });
 
   const [fotoFile, setFotoFile] = useState(null);
+
+  // Set role ke 'pencari kerja' setiap kali komponen di-mount
+  useEffect(() => {
+    setValue("role", "pencari kerja");
+  }, [setValue]);
 
   const onSubmit = async (data) => {
     try {
@@ -230,39 +236,6 @@ const RegisterForm = () => {
           onChange={(e) => setFotoFile(e.target.files[0])}
           error={errors.foto?.message}
         />
-
-        <div className='space-y-2'>
-          <label className='font-medium'>
-            Saya adalah:
-            <span className='text-primary ml-1'>*</span>
-          </label>
-
-          <div className='flex space-x-4'>
-            <label className='flex items-center space-x-2'>
-              <input
-                type='radio'
-                value='pencari kerja'
-                className='form-radio h-5 w-5 text-primary'
-                {...register("role")}
-              />
-              <span>Pencari Kerja</span>
-            </label>
-
-            <label className='flex items-center space-x-2'>
-              <input
-                type='radio'
-                value='recruiter'
-                className='form-radio h-5 w-5 text-primary'
-                {...register("role")}
-              />
-              <span>Perekrut</span>
-            </label>
-          </div>
-
-          {errors.role && (
-            <span className='text-primary text-sm'>{errors.role.message}</span>
-          )}
-        </div>
 
         <Button type='submit' variant='primary' fullWidth disabled={isLoading}>
           {isLoading ? "Membuat Akun..." : "Buat Akun"}
