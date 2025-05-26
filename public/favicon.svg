@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#FFFFFF"/>
+
+  <!-- Briefcase (Job) -->
+  <rect x="18" y="22" width="28" height="18" rx="2" ry="2" fill="#FF3366" stroke="#111111" stroke-width="2"/>
+  <rect x="24" y="16" width="16" height="8" rx="1" ry="1" fill="#FF3366" stroke="#111111" stroke-width="2"/>
+
+  <!-- AI brain circuit -->
+  <circle cx="45" cy="45" r="5" fill="#6633FF" stroke="#111111" stroke-width="2"/>
+  <line x1="45" y1="40" x2="45" y2="35" stroke="#33FF99" stroke-width="2"/>
+  <circle cx="45" cy="35" r="2" fill="#33FF99" stroke="#111111" stroke-width="1"/>
+  <line x1="41" y1="45" x2="36" y2="45" stroke="#33FF99" stroke-width="2"/>
+  <circle cx="36" cy="45" r="2" fill="#33FF99" stroke="#111111" stroke-width="1"/>
+</svg>

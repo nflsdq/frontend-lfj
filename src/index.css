@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FF3366;
+  --color-secondary: #33FF99;
+  --color-accent: #6633FF;
+  --color-background: #FFFFFF;
+  --color-text: #111111;
+}
+
+@layer base {
+  html {
+    @apply text-[#111111] bg-white;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 font-medium text-white rounded-2xl transition-transform duration-200 active:translate-y-1 active:shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-[#FF3366] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)];
+  }
+
+  .btn-secondary {
+    @apply bg-[#33FF99] text-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)];
+  }
+
+  .btn-accent {
+    @apply bg-[#6633FF] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.8)];
+  }
+
+  .card {
+    @apply rounded-3xl bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] border-2 border-black;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-black rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.8)] focus:outline-none focus:ring-2 focus:ring-[#6633FF] focus:shadow-none transition-shadow duration-200;
+  }
+
+  .page-container {
+    @apply container mx-auto px-4 py-8 md:px-8;
+  }
+}
+
+/* Pattern background */
+.pattern-bg {
+  background-color: #ffffff;
+  background-image: radial-gradient(#33FF99 0.5px, transparent 0.5px), radial-gradient(#FF3366 0.5px, #ffffff 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Animation utilities */
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
