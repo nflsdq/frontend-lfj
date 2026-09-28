@@ -89,7 +89,7 @@ const Profile: React.FC = () => {
   const [showPasswordFields, setShowPasswordFields] = useState(false);
 
   // const storageBaseUrl = "http://localhost:8000/storage/";
-  const storageBaseUrl = "https://api-lfj.naufalsidiq.xyz/storage/";
+  const storageBaseUrl = "https://api-lfj.naufalsidiq.tech/storage/";
 
   // Fetch user profile data
   const { data: profileData, isLoading: profileLoading } = useQuery<any>(
